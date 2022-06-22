@@ -3,6 +3,9 @@ package jfsd.assessments.phase5.CiCdDemo.tests;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -17,7 +20,8 @@ public class UnitTests {
 	
 	@BeforeAll
 	public static void setup() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\resources\\chromedriver.exe");
+		Path driverPath = Paths.get(System.getProperty("user.dir"), "src", "resources", "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", driverPath.toString());
 		driver = new ChromeDriver();
 	}
 	
