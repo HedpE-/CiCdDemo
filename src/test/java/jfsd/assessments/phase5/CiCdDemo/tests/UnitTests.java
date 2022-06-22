@@ -20,7 +20,11 @@ public class UnitTests {
 	
 	@BeforeAll
 	public static void setup() {
-		Path driverPath = Paths.get(System.getProperty("user.dir"), "src", "resources", "chromedriver.exe");
+		String fileName = "chromedriver";
+		if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+			fileName += ".exe";
+				
+		Path driverPath = Paths.get(System.getProperty("user.dir"), "src", "resources", fileName);
 		System.setProperty("webdriver.chrome.driver", driverPath.toString());
 		driver = new ChromeDriver();
 	}
