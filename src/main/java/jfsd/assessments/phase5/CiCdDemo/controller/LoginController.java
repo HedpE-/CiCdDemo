@@ -34,13 +34,16 @@ public class LoginController {
 		if(user.getUsername().equals(dbUser.getUsername())) {
 			if (user.validateUser(dbUser)) {
 				dbUser.setLast_login(new Date());
-				session.setAttribute("user", dbUser);
+				if(session != null)
+					session.setAttribute("user", dbUser);
 				
 				return "redirect:congrats";
 			}
 		}
 
-		map.put("error", "Invalid Credentials");
+		if(map != null)
+			map.put("error", "Invalid Credentials");
+		
 		return "redirect:signin";
 	}
 
