@@ -22,7 +22,7 @@
 <body>
 	<c:set var="user" value="${sessionScope.user}" />
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="home">Sporty Shoes</a>
+		<a class="navbar-brand" href="home">CiCdDemo</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto d-flex align-items-center justify-content-center">
 				<li class="nav-item active">
